@@ -2,7 +2,8 @@
 lock '3.6.1'
 
 set :application, 'sample'
-set :repo_url, 'git@github.com:swfz/rails-api-sample.git'
+# set :repo_url, 'git@github.com:swfz/rails-api-sample.git'
+set :repo_url, 'https://github.com/swfz/rails-api-sample.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
