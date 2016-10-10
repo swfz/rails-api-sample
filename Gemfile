@@ -27,8 +27,9 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
   gem 'byebug', platform: :mri
-  gem 'awesome_print', require: 'ap'
+  gem 'awesome_print'
 end
 
 group :development do
