@@ -7,21 +7,18 @@
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
 threads threads_count, threads_count
 
-application_path = "#{File.expand_path("../..", __FILE__)}"
-
-# port        ENV.fetch("PORT") { 3000 }
-bind "unix://#{application_path}/tmp/sockets/puma.sock"
-
+directory '/var/www/sample/current'
+bind "unix://#{directory}/tmp/sockets/puma.sock"
 environment ENV.fetch("RAILS_ENV") { "development" }
 
 workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 daemonize true
 
-state_path "#{application_path}/tmp/pids/puma.state"
-pidfile "#{application_path}/tmp/pids/puma.pid"
+state_path "#{directory}/tmp/pids/puma.state"
+pidfile "#{directory}/tmp/pids/puma.pid"
 
-stdout_redirect "#{application_path}/log/puma.stdout.log", "#{application_path}/log/puma.stderr.log"
+stdout_redirect "#{directory}/log/puma.stdout.log", "#{directory}/log/puma.stderr.log"
 
 # The code in the `on_worker_boot` will be called if you are using
 # clustered mode by specifying a number of `workers`. After each worker

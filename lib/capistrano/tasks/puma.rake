@@ -7,7 +7,7 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:updated', 'puma:restart'
+  after 'deploy:finished', 'puma:restart'
 end
 
 namespace :puma do
