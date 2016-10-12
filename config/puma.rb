@@ -7,7 +7,8 @@
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
 threads threads_count, threads_count
 
-directory '/var/www/sample/current'
+directory = '/var/www/sample/current'
+
 bind "unix://#{directory}/tmp/sockets/puma.sock"
 environment ENV.fetch("RAILS_ENV") { "development" }
 
