@@ -59,3 +59,6 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+role :puma, %w(192.168.30.82 192.168.30.83)
+server '192.168.30.84', :roles => %i(misc)

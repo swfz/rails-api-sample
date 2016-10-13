@@ -60,5 +60,4 @@
 #     # password: 'please use keys'
 #   }
 
-role :puma, %w(192.168.100.11 192.168.100.12)
-server '192.168.100.13', :roles => %i(misc)
+

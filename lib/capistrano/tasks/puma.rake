@@ -15,10 +15,10 @@ namespace :puma do
   task :restart do
     on roles(:puma) do
       within current_path do
-        if capture(:rbenv, 'exec', 'bundle', 'exec', 'pumactl', '-F config/puma.rb', 'status', '|| true') =~ /started/
-          execute :rbenv, 'exec', 'bundle', 'exec', 'pumactl', '-F config/puma.rb', 'phased-restart'
+        if capture(:rbenv, 'exec', 'bundle', 'exec', 'pumactl', '-F config/puma/production.rb', 'status', '|| true') =~ /started/
+          execute :rbenv, 'exec', 'bundle', 'exec', 'pumactl', '-F config/puma/production.rb', 'phased-restart'
         else
-          execute :rbenv, 'exec', 'bundle', 'exec', 'puma', '-C config/puma.rb'
+          execute :rbenv, 'exec', 'bundle', 'exec', 'puma', '-C config/puma/production.rb'
         end
       end
     end
@@ -28,7 +28,7 @@ namespace :puma do
   task :start do
     on roles(:puma) do
       within current_path do
-        execute :bundle, 'exec', 'puma', '-C config/puma.rb'
+        execute :bundle, 'exec', 'puma', '-C config/puma/production.rb'
       end
     end
   end
@@ -37,7 +37,7 @@ namespace :puma do
   task :stop do
     on roles(:puma) do
       within current_path do
-        execute :bundle, 'exec', 'pumactl', '-F config/puma.rb', 'stop'
+        execute :bundle, 'exec', 'pumactl', '-F config/puma/production.rb', 'stop'
       end
     end
   end
