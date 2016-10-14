@@ -10,11 +10,11 @@ threads threads_count, threads_count
 directory = '/var/www/sample/current'
 
 bind "unix://#{directory}/tmp/sockets/puma.sock"
-environment "test"
+environment "production"
 
 workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
-daemonize false
+daemonize true
 
 state_path "#{directory}/tmp/pids/puma.state"
 pidfile "#{directory}/tmp/pids/puma.pid"
