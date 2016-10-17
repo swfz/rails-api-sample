@@ -61,4 +61,4 @@
 #   }
 
 role :puma, %w(192.168.30.82 192.168.30.83)
-server '192.168.30.84', :roles => %i(misc)
+server '192.168.30.84', :roles => %i(resque), :processes => 2, :queue => 'default'
