@@ -11,7 +11,7 @@ processes.times do |n|
     w.group = 'resque'
     w.interval = 30.seconds
     w.env = {'QUEUE' => queue, 'RAILS_ENV' => rails_env }
-    w.start = "sudo -E rbenv exec bundle exec rake environment resque:work"
+    w.start = "rbenv exec bundle exec rake environment resque:work"
     w.stop_signal = 'QUIT'
     w.log     = "log/resque.log"
     w.err_log = "log/resque.log"
