@@ -15,6 +15,7 @@ gem 'redis', '~> 3.0'
 gem 'god'
 gem 'resque'
 gem 'resque-scheduler'
+gem 'listen', '~> 3.0.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
