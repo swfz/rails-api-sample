@@ -1,0 +1,9 @@
+---
+- hosts: local
+  become: yes
+  vars:
+    username: vagrant
+  roles:
+    - { role: supervisor3, tags: supervisor3 }
+    - { role: botkit,      tags: botkit }
+
