@@ -2,7 +2,9 @@
 lock '3.6.1'
 
 set :application, 'sample'
-set :repo_url, 'git://192.168.30.81/sample.git'
+set :repo_url, 'git://192.168.30.14/sample.git'
+
+set :branch, 'nodeapp'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -27,7 +29,7 @@ set :pty, true
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 # Default value for linked_dirs is []
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'slackbot/node_modules'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
