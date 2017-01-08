@@ -1,0 +1,25 @@
+{
+  "name": "slackbot",
+  "version": "1.0.0",
+  "description": "``` TOKEN=xxxxx sudo -E /usr/local/bin/docker-compose up ```",
+  "main": "app.js",
+  "dependencies": {
+    "botkit": "^0.4.6"
+  },
+  "devDependencies": {
+    "botkit": "^0.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swfz/slackbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swfz/slackbot/issues"
+  },
+  "homepage": "https://github.com/swfz/slackbot#readme"
+}
