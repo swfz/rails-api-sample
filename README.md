@@ -2,7 +2,6 @@
 
 * Ruby version
 
-2.3.1
 
 * System dependencies
 - redis
@@ -19,14 +18,20 @@ rake db:create
 rails g db:migrate
 ```
 
-* How to run the test suite
+## Develoment
 
-* Services (job queues, cache servers, search engines, etc.)
-- resque
+### set environment
 
-* Deployment instructions
+- docker/.env
 
-* Development
+for development environment. using docker and rails config
+
+```
+SAMPLE_DOCKER_REDIS_HOST=192.168.30.14
+SAMPLE_DOCKER_REDIS_PORT=6379
+SAMPLE_DOCKER_MYSQL_HOST=192.168.30.14
+SAMPLE_DOCKER_MYSQL_PORT=3306
+```
 
 - docker
 
@@ -35,10 +40,25 @@ cd docker
 sudo docker-compose up
 ```
 
-- app
+- app(web)
 
 ```
-rails s
-QUEUE=* rake environment resque:work
+envfile docker/.env bundle exec rails s
 ```
+
+- app(resque)
+
+```
+envfile docker/.env ./bin/god start
+```
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+capistrano
+
+
 

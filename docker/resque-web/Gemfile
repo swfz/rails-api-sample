@@ -1,5 +1,0 @@
-source 'https://rubygems.org'
-
-gem 'resque'
-gem 'redis'
-gem 'resque-web'

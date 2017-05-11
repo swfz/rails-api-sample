@@ -8,6 +8,8 @@ default: &default
   pool: 5
   timeout: 5000
   database: sample
+  host: <%= ENV['SAMPLE_DOCKER_MYSQL_HOST'] || '127.0.0.1' %>
+  port: <%= ENV['SAMPLE_DOCKER_MYSQL_PORT'] || '3306' %>
 
 development:
   <<: *default
@@ -15,9 +17,10 @@ development:
 
 test:
   <<: *default
-  database: sample
+  database: sample_test
 
 production:
   <<: *default
   database: sample
+  host: production-host
 

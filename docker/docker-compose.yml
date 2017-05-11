@@ -8,20 +8,12 @@ services:
   mysql:
     build: ./mysql
     ports:
-      - "3306:3306"
+      - "${SAMPLE_DOCKER_MYSQL_PORT}:3306"
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   redis:
     image: redis:3.2
     ports:
-      - "6379:6379"
-  resque-web:
-    build: ./resque-web
-    ports:
-      - "5678:5678"
-    depends_on:
-      - "redis"
-    command: -r redis:6379
-
+      - "${SAMPLE_DOCKER_REDIS_PORT}:6379"
 
 
