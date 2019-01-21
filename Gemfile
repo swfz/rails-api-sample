@@ -16,6 +16,7 @@ gem 'god'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'listen', '~> 3.0.5'
+gem 'composite_primary_keys'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -31,6 +32,9 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'byebug', platform: :mri
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
